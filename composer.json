@@ -1,6 +1,6 @@
 {
     "name": "tinymeng/ffmpeg-php",
-    "description": "Integrate third-party logins",
+    "description": "php使用ffmpeg视频分析",
     "keywords": [
         "tinymeng", "ffmpeg","php"
     ],
