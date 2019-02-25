@@ -9,18 +9,34 @@ namespace tinymeng\ffmpeg;
 
 class FFMpeg extends BaseClass
 {
+    /**
+     * @author: JiaMeng <666@majiameng.com>
+     * @var
+     */
     static private $driver;
 
-    public function __construct(array $config)
+    /**
+     * FFMpeg constructor.
+     * @param $bin_dir
+     * @internal param array $config
+     */
+    public function __construct($bin_dir)
     {
-        $this->config = array_merge($this->config,$config);
+        $this->bin_dir = $bin_dir;
     }
 
-    public static function create(array $config = array()){
+    /**
+     * Description:  create
+     * @author: JiaMeng <666@majiameng.com>
+     * Updater:
+     * @param string $bin_dir
+     * @return FFMpeg
+     */
+    public static function create($bin_dir = '/usr/local/ffmpeg/bin/'){
         if(self::$driver instanceof self){
             return self::$driver;
         }else{
-            return self::$driver = new self($config);
+            return self::$driver = new self($bin_dir);
         }
 
     }
